@@ -1,0 +1,210 @@
+body {
+    height: 100vh;
+    font-family: sans-serif;
+    background: #2f3238;
+    font-family: 'Raleway', Arial, sans-serif;
+}
+.text-center{
+    text-align: center;
+    padding: 70px 0;
+}
+.text-center h1{
+    margin: 0;
+    font-weight: 800;
+    font-size: 56px;
+    color: #fff;
+}
+.text-center span{
+    display: block;
+    font-weight: 300;
+    font-size: 32px;
+    color: #74777b;
+}
+.flex {
+    display: flex;
+}
+.justify-center {
+    justify-content: center;
+}
+.items-center {
+    align-items: center;
+}
+
+
+.box {
+    width: 480px;
+    height: 360px;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.box .bg-image {
+    width: 100%;
+    height: 100%;
+    transition: all ease .3s;
+}
+.box .image-1{
+    background-image: url("https://tympanus.net/Development/HoverEffectIdeas/img/21.jpg");
+}
+.box .image-2{
+    background-image: url("https://tympanus.net/Development/HoverEffectIdeas/img/22.jpg");
+}
+.box .image-3{
+    background-image: url("https://tympanus.net/Development/HoverEffectIdeas/img/23.jpg");
+}
+.box .image-4{
+    background-image: url("https://tympanus.net/Development/HoverEffectIdeas/img/24.jpg");
+}
+.box .image-5{
+    background-image: url("https://tympanus.net/Development/HoverEffectIdeas/img/2.jpg");
+}
+.box .image-6{
+    background-image: url("https://tympanus.net/Development/HoverEffectIdeas/img/14.jpg");
+}
+.box .bg-image .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all ease .3s;
+}
+
+
+.text {
+    color: white;
+    position: absolute;
+    text-transform: uppercase;
+    word-spacing: -0.15em;
+    font-weight: 300;
+}
+.text-julia{
+    top: 20px;
+    left: 20px;
+}
+.text span{
+    font-weight: 800;
+}
+
+.text-box {
+    color: black;
+    padding: 8px;
+    position: absolute;
+    left: 20px;
+    transform: translateX(-300px);
+    transition: all ease .3s;
+    -webkit-transform: translateX(-300px);
+    -moz-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    -o-transform: translateX(-300px);
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    -o-transition: all ease .3s;
+}
+
+.text-box-julia-1 {
+    top: 100px;
+    background: white;
+}
+.text-box-julia-2 {
+    top: 140px;
+    transition-delay: 100ms;
+    background: white;
+}
+.text-box-julia-3 {
+    top: 180px;
+    background: white;
+    transition-delay: 200ms;
+}
+.box-julia:hover > .bg-image {
+    transform: scale(1.2);
+}
+
+.box-julia:hover > .bg-image > .overlay {
+    background-color: rgb(0,0,0,0.3);
+}
+
+.box-julia:hover .text-box {
+    transform: translateX(0px);
+}
+/* Julia end */
+.text-goliath{
+    top: 200px;
+    left: 20px;
+    transition: all ease .3s;
+}
+.text-box-goliah{
+    top: 415px;
+    left: 300px;
+    background-color: rgb(223,78,78);
+    width: 100%;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    transition: all ease .3s;
+}
+
+
+.box-goliath:hover > .bg-image {
+    transform: translateY(-70px);
+    -webkit-transform: translateY(-70px);
+    -moz-transform: translateY(-70px);
+    -ms-transform: translateY(-70px);
+    -o-transform: translateY(-70px);
+}
+.box-goliath:hover .text-goliath{
+    transform: translateY(-70px);
+    -webkit-transform: translateY(-70px);
+    -moz-transform: translateY(-70px);
+    -ms-transform: translateY(-70px);
+    -o-transform: translateY(-70px);
+}
+.box-goliath:hover > .text-box-goliah{
+    transform: translate(-300px,-150px);
+    -webkit-transform: translate(-300px,-150px);
+    -moz-transform: translate(-300px,-150px);
+    -ms-transform: translate(-300px,-150px);
+    -o-transform: translate(-300px,-150px);
+}
+/* Goliath end */
+.text-sadie{
+    top: 200px;
+    left: 170px;
+    transition: all ease .3s;
+    color: #484c61;
+}
+.text-box-sadie{
+    top: 300px;
+    left: 300px;
+    color: #fff;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all ease .3s;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    -o-transition: all ease .3s;
+}
+.box-sadie:hover > .bg-image > .overlay {
+    background-color: rgb(0,0,0,0.3);
+}
+.box-sadie:hover .text-sadie{
+    transform: translateY(-40px);
+    -webkit-transform: translateY(-40px);
+    -moz-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    -o-transform: translateY(-40px);
+    color: #fff;
+}
+.box-sadie:hover > .text-box-sadie{
+    opacity: 1;
+    transform: translate(-300px,-5px);
+    -webkit-transform: translate(-300px,-5px);
+    -moz-transform: translate(-300px,-5px);
+    -ms-transform: translate(-300px,-5px);
+    -o-transform: translate(-300px,-5px);
+}
