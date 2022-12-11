@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: #2c3e50;
+}
+.loading-flip{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -15px 0 0 -15px;
+    width: 100px;
+    height: 100px;
+    background-color: #e16971;
+    animation: flip 1s infinite ease-in-out;
+    -webkit-animation: flip 1s infinite ease-in-out;
+}
+.loading-chase{
+    left: 50%;
+    top: 200px;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    animation: chase 2s infinite linear ;
+    -webkit-animation: chase 2s infinite linear ;
+}
+.chase-dot{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation:chase-dot 2s infinite ease-in-out both;
+}
+.chase-dot:before{
+    content: "";
+    display: block;
+    width: 25%;
+    height: 25%;
+    background-color: #fafafa;
+    border-radius: 100%;
+    animation: chase-dot-before 2s infinite ease-in-out both;
+    -webkit-animation: chase-dot-before 2s infinite ease-in-out both;
+}
+.chase-dot:nth-child(1){
+    animation-delay: -.1s;
+}
+.chase-dot:nth-child(2){
+    animation-delay: -.2s;
+}
+.chase-dot:nth-child(3){
+    animation-delay: -.3s;
+}
+.chase-dot:nth-child(4){
+    animation-delay: -.4s;
+}
+
+@keyframes flip {
+    0%{
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+    50%{
+        transform: perspective(120px) rotateX(180deg) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(120px) rotateX(180deg) rotateY(180deg)    ;
+    }
+}   
+@keyframes chase {
+    100% { 
+        transform: rotate(360deg); 
+    } 
+}
+
+@keyframes chase-dot {
+    80%, 100% { 
+        transform: rotate(360deg); 
+    } 
+}
+
+@keyframes chase-dot-before {
+  50% {
+    transform: scale(0.4); 
+  } 
+  100%, 0% {
+    transform: scale(1.0);
+  } 
+}
