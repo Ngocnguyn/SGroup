@@ -1,0 +1,16 @@
+.owl-stage-outer{
+    padding: 48px 16px;
+    border-bottom: 2px solid #a2a1a6;
+}
+.owl-nav button span{
+    font-size: 32px;
+    margin: 10px;
+}
+.owl-nav{
+    display: flex;
+    justify-content: flex-end;
+}
+.owl-nav button:hover{
+    background: #fff !important;
+    color: #D6D6D6 !important;
+}

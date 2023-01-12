@@ -5,9 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The One DevOps Platform | Gitlab</title>
+    <link rel="stylesheet" href="/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/owl.css">
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/all.css" />
-  </head>
+    <link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css' />
+
+    <script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
+  <script> new WOW().init()</script>
+</head>
   <script
     defer
     src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"
@@ -30,10 +37,7 @@
       </div>
       <div class="navigation">
         <div class="navigation-unactive">
-          <button
-            type="button"
-            class="slp-btn navigation__search slp-mr-24 slp-btn-icon"
-          >
+          <button id="search__mobile" type="button" class="slp-btn navigation__search slp-mr-24 slp-btn-icon">
             <iconify-icon
               icon="ic:outline-search"
               style="color: #333"
@@ -52,12 +56,7 @@
             </li>
             <li class="navigation-item navigation-drop">
               <a href="">Solutions</a>
-              <iconify-icon
-                class="navigation-drop-icon"
-                icon="ic:baseline-keyboard-arrow-down"
-                width="24"
-                height="24"
-              ></iconify-icon>
+              <iconify-icon class="navigation-drop-icon" icon="ic:baseline-keyboard-arrow-down" width="24" height="24"></iconify-icon>
               <div class="navigation-dropdown__main">
                 <div class="navigation-dropdown__main-colums">
                   <div class="navigation-dropdown" style="columns: auto 3">
@@ -250,6 +249,8 @@
                         <li><a href="">Handbook</a></li>
                         <li><a href="">Investor relations</a></li>
                         <li><a href="">Trust Center</a></li>
+                        <li><a href="">Newsletter</a></li>
+                        <li><a href="">Press</a></li>
                       </ul>
                     </div>
                   </div>
@@ -286,17 +287,8 @@
           </ul>
         </div>
         <div class="navigation-right">
-          <button
-            type="button"
-            id="search__desktop"
-            class="slp-btn navigation__search slp-mr-24 slp-btn-icon"
-          >
-            <iconify-icon
-              icon="ic:outline-search"
-              style="color: #333"
-              width="20"
-              height="20"
-            ></iconify-icon>
+          <button type="button" id="search__desktop" class="slp-btn navigation__search slp-mr-24 slp-btn-icon">
+            <iconify-icon icon="ic:outline-search" style="color: #333" width="20" height="20"></iconify-icon>
           </button>
           <a
             href="https://gitlab.com/-/trial_registrations/new?glm_source=about.gitlab.com/&glm_content=default-saas-trial"
@@ -305,32 +297,14 @@
             <span> Get free trial </span>
           </a>
           <div class="navigation-right__unactive">
-            <a href="" class="slp-btn slp-ml-16 slp-btn-icon"
-              ><iconify-icon
-                icon="mdi:user-outline"
-                style="color: #333"
-                width="20"
-                height="20"
-              ></iconify-icon
-            ></a>
-            <button
-              type="button"
-              class="slp-btn navigation__search slp-ml-16 slp-btn-icon"
-            >
-              <iconify-icon
-                icon="ic:outline-search"
-                style="color: #333"
-                width="20"
-                height="20"
-              ></iconify-icon>
+            <a href="" class="slp-btn slp-ml-16 slp-btn-icon">
+              <iconify-icon icon="mdi:user-outline" style="color: #333" width="20" height="20"></iconify-icon>
+            </a>
+            <button  id="search__tablet" type="button" class="slp-btn navigation__search slp-ml-16 slp-btn-icon">
+              <iconify-icon icon="ic:outline-search" style="color: #333" width="20" height="20"></iconify-icon>
             </button>
-            <button type="button" class="slp-btn slp-ml-16 slp-btn-icon">
-              <iconify-icon
-                icon="radix-icons:hamburger-menu"
-                style="color: #333"
-                width="20"
-                height="20"
-              ></iconify-icon>
+            <button id="menu__button" type="button" class="slp-btn slp-ml-16 slp-btn-icon">
+              <iconify-icon icon="radix-icons:hamburger-menu" style="color: #333" width="20"height="20"></iconify-icon>
             </button>
           </div>
           <div class="nav-login">
@@ -360,6 +334,103 @@
           </div>
         </div>
       </div>
+      <section class="search">
+        <div class="search__container">
+          <div class="slp-row search__row">
+            <div class="search__menu slp-col-md-3"></div>
+            <div class="slp-col-md-8">
+              <div class="search__close">
+                <button type="button" id="search__close" class="slp-btn slp-btn-ghost">
+                  <span class="search__close-text slp-text-body3">Close</span>
+                  <iconify-icon class="slp-ml-8" icon="ph:x-bold" width="16" height="16"></iconify-icon>
+                </button>
+              </div>
+              <div class="search__content">
+                <div class="search__content-input slp-mb-16">
+                  <input type="text" placeholder="Search">
+                </div>
+                <div class="slp-mb-48">
+                  <div class="slp-mb-8 slp-text-body3">
+                    To search repositories and projects, login to
+                    <a href="" target="_blank">gitlab.com</a>
+                  </div>
+                </div>
+                <div class="suggestions">
+                  <h5 class="slp-mb-24 slp-text-body1">Suggestions</h5>
+                  <div class="suggestions__default">
+                    <a href="" target="_blank" class="slp-btn suggestions__default-btn slp-btn-primary"> Continuous Integration</a>
+                    <a href="" target="_blank" class="slp-btn suggestions__default-btn slp-btn-primary"> DevOps</a>
+                    <a href="" target="_blank" class="slp-btn suggestions__default-btn slp-btn-primary"> GitLab for Enterprise</a>
+                    <a href="" target="_blank" class="slp-btn suggestions__default-btn slp-btn-primary"> GitLab for Small Business</a>
+                    <a href="" target="_blank" class="slp-btn suggestions__default-btn slp-btn-primary"> Why GitLab?</a>
+                    <a href="" target="_blank" class="slp-btn suggestions__default-btn slp-btn-primary"> Get Started</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="menu">
+        <div class="slp-mb-24">
+          <div class="menu-top">
+            <a href="" class="slp-btn slp-btn-icon">
+              <svg data-v-1a6b92b0="" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="tanukiHomeMobileMenu" data-v-2271f886=""><title id="tanukiHomeMobileMenu">GitLab home page</title><path d="M31.4618 12.7787L31.417 12.6641L27.0667 1.31308C26.9783 1.09046 26.8218 0.90145 26.6197 0.773028C26.416 0.644476 26.1775 0.582308 25.937 0.595107C25.6965 0.607906 25.4659 0.695039 25.277 0.844481C25.0899 0.994513 24.955 1.1998 24.8915 1.43106L21.9503 10.4324H10.0509L7.10976 1.43106C7.04625 1.1998 6.91133 0.994513 6.72425 0.844481C6.53618 0.694035 6.30572 0.606246 6.06523 0.593431C5.82473 0.580616 5.58625 0.64342 5.38326 0.773028C5.18023 0.900924 5.02312 1.09005 4.9346 1.31308L0.579314 12.679L0.534448 12.792C-0.0907536 14.429 -0.167604 16.2247 0.315452 17.9091C0.798508 19.5935 1.81536 21.0756 3.21309 22.1324L3.22971 22.144L3.26793 22.1739L9.90306 27.1407L13.1832 29.625L15.1773 31.1354C15.4115 31.3124 15.6971 31.4082 15.9907 31.4082C16.2842 31.4082 16.5698 31.3124 16.8041 31.1354L18.7981 29.625L22.0799 27.1407L28.7533 22.144L28.7715 22.1307C30.174 21.0749 31.1949 19.5916 31.6802 17.9045C32.1656 16.2175 32.0889 14.4184 31.4618 12.7787Z" fill="#E24329"></path><path d="M31.462 12.7787L31.4172 12.6641C29.2955 13.1013 27.2962 14.0005 25.5614 15.2978L16.0083 22.5378C19.2652 25.0005 22.1001 27.1407 22.1001 27.1407L28.7734 22.144L28.7917 22.1307C30.1907 21.0723 31.2076 19.5877 31.6893 17.9009C32.171 16.214 32.0912 14.4163 31.462 12.7787Z" fill="#FC6D26"></path><path d="M9.9082 27.1407L13.1834 29.625L15.1774 31.1354C15.4117 31.3124 15.6972 31.4082 15.9908 31.4082C16.2844 31.4082 16.57 31.3124 16.8042 31.1354L18.7982 29.625L22.0801 27.1407C22.0801 27.1407 19.2452 25.0005 15.9883 22.5378L9.9082 27.1407Z" fill="#FCA326"></path><path d="M6.43513 15.3045C4.70076 14.0067 2.70123 13.108 0.579333 12.6724L0.534467 12.7854C-0.0923403 14.4232 -0.170036 16.2203 0.313079 17.9061C0.796194 19.5919 1.81396 21.0751 3.21311 22.1324L3.22973 22.144L3.26795 22.1739L9.90307 27.1407L16.0081 22.5378L6.43513 15.3045Z" fill="#FC6D26"></path></svg>
+            </a>
+            <button id="btn-menu-close" type="button" class="slp-btn slp-btn-icon">
+              <iconify-icon class="slp-ml-8" icon="ph:x-bold" width="16" height="16"></iconify-icon>
+            </button>
+          </div>
+          <div class="menu-bottom">
+            <div class="slp-flex">
+              <a href="" class="slp-btn nav-menu-item slp-btn-ghost">
+                <span class="slp-text-body1">Platform</span>
+              </a>
+            </div>
+            <div class="slp-flex">
+              <a href="" class="slp-btn nav-menu-item slp-btn-ghost">
+                <span class="slp-text-body1">Solutions</span>
+                <svg data-v-1a6b92b0="" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000" data-v-2271f886=""><path fill-rule="evenodd" clip-rule="evenodd" d="M5.22 2.22a.75.75 0 0 1 1.06 0l5.252 5.252a.75.75 0 0 1 0 1.06L6.28 13.784a.75.75 0 1 1-1.06-1.06l4.72-4.723L5.22 3.28a.75.75 0 0 1 0-1.06Z"></path></svg>
+              </a>
+            </div>
+            <div class="slp-flex">
+              <a href="" class="slp-btn nav-menu-item slp-btn-ghost">
+                <span class="slp-text-body1">Pricing</span>
+              </a>
+            </div>
+            <div class="slp-flex">
+              <a href="" class="slp-btn nav-menu-item slp-btn-ghost">
+                <span class="slp-text-body1">Resources</span>
+                <svg data-v-1a6b92b0="" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000" data-v-2271f886=""><path fill-rule="evenodd" clip-rule="evenodd" d="M5.22 2.22a.75.75 0 0 1 1.06 0l5.252 5.252a.75.75 0 0 1 0 1.06L6.28 13.784a.75.75 0 1 1-1.06-1.06l4.72-4.723L5.22 3.28a.75.75 0 0 1 0-1.06Z"></path></svg>
+              </a>
+            </div>
+            <div class="slp-flex">
+              <a href="" class="slp-btn nav-menu-item slp-btn-ghost">
+                <span class="slp-text-body1">Company</span>
+                <svg data-v-1a6b92b0="" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000" data-v-2271f886=""><path fill-rule="evenodd" clip-rule="evenodd" d="M5.22 2.22a.75.75 0 0 1 1.06 0l5.252 5.252a.75.75 0 0 1 0 1.06L6.28 13.784a.75.75 0 1 1-1.06-1.06l4.72-4.723L5.22 3.28a.75.75 0 0 1 0-1.06Z"></path></svg>
+              </a>
+            </div>
+            <div class="slp-flex">
+              <a href="" class="slp-btn nav-menu-item slp-btn-ghost">
+                <span class="slp-text-body1">Contact us</span>
+                <svg data-v-1a6b92b0="" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000" data-v-2271f886=""><path fill-rule="evenodd" clip-rule="evenodd" d="M5.22 2.22a.75.75 0 0 1 1.06 0l5.252 5.252a.75.75 0 0 1 0 1.06L6.28 13.784a.75.75 0 1 1-1.06-1.06l4.72-4.723L5.22 3.28a.75.75 0 0 1 0-1.06Z"></path></svg>
+              </a>
+            </div>
+            <div class="slp-flex slp-mt-16">
+              <a href="" class="slp-btn nav-menu-item nav-menu-item--icon slp-btn-ghost">
+                <div class="slp-flex slp-align-items-center">
+                  <img src="./img/user-img-tablet.svg" alt="" style="margin-right: 8px;">
+                  <span class="slp-text-body1">
+                    Sign in
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="" class="slp-btn nav-menu-bottom slp-btn-primary">Get free trial</a>
+      </section>
+
     </header>
     <div class="main">
       <div class="slp-container" style="position: relative">
@@ -391,49 +462,32 @@
                 </div>
               </div>
             </div>
-            <div
-              class="homepage__media-column slp-flex slp-align-items-center slp-col-lg-6"
-            >
+            <div class="homepage__media-column slp-flex slp-align-items-center slp-col-lg-6">
               <div class="card-carousel">
                 <p class="desktop slp-text-heading5-bold">DevSecOps platform</p>
                 <div class="card-img">
                   <div class="card-img__image active">
-                    <img
-                      src="https://about.gitlab.com/_nuxt/image/3a4077.png"
-                      alt=""
-                    />
+                    <img src="https://about.gitlab.com/_nuxt/image/3a4077.png" alt="" />
                   </div>
                   <div class="card-img__image">
-                    <img
-                      src="https://about.gitlab.com/_nuxt/image/b3fd7b.png"
-                      alt=""
-                    />
+                    <img src="https://about.gitlab.com/_nuxt/image/b3fd7b.png" alt=""/>
                   </div>
                   <div class="card-img__image">
-                    <img
-                      src="https://about.gitlab.com/_nuxt/image/f94c74.png"
-                      alt=""
+                    <img src="https://about.gitlab.com/_nuxt/image/f94c74.png" alt=""
                     />
                   </div>
                 </div>
                 <p class="mobile slp-text-heading5-bold">DevSecOps platform</p>
                 <div class="progressbar-container">
-                  <div
-                    class="progressbar slp-mr-24"
-                    style="width: 33.3333333336%"
-                  >
-                    <div class="active" style="width: 20%"></div>
+                  <div class="progressbar slp-mr-24" style="width: 33.3333333336%">
+                    <div class="progressbar__time active" ></div>
                   </div>
-                  <div
-                    class="progressbar slp-mr-24"
-                    style="width: 33.3333333336%"
-                  >
-                    <div width="20%"></div>
+                  <div class="progressbar slp-mr-24" style="width: 33.3333333336%">
+                    <div class="progressbar__time" ></div>
                   </div>
-                  <div
-                    class="progressbar slp-mr-24"
-                    style="width: 33.3333333336%"
-                  ></div>
+                  <div class="progressbar slp-mr-24" style="width: 33.3333333336%">
+                    <div class="progressbar__time" ></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -487,11 +541,7 @@
           </div>
         </section>
       </div>
-      <div
-        class="slp-partial-charcoal-background wrapper"
-        style="position: relative"
-        s
-      >
+      <div class="slp-partial-charcoal-background wrapper">
         <div class="slp-container">
           <div class="featured-content">
             <a href="" class="featured-content__card">
@@ -594,12 +644,12 @@
                   icon="ic:baseline-arrow-forward-ios"
                   width="16"
                   height="16"
-                ></iconify-icon>
+                ></iconify-icon>  
               </a>
             </div>
             <div class="quotes-carousel__container">
               <div class="quotes-carousel__wrapper">
-                <div class="quotes-carousel__content">
+                <div class="slider owl-carousel owl-theme  quotes-carousel__content">
                   <div class="quotes-carousel__content-item">
                     <a href="" class="quotes-carousel__link">
                       <div class="slp-row logo quotes-carousel-text">
@@ -629,30 +679,77 @@
                       </div>
                     </a>
                   </div>
-                  <div class="quotes-carousel__content-item"></div>
-                  <div class="quotes-carousel__content-item"></div>
-                  <div class="quotes-carousel__content-item"></div>
+                  <div class="quotes-carousel__content-item">
+                    <a href="" class="quotes-carousel__link">
+                      <div class="slp-row logo quotes-carousel-text">
+                        <div class="slp-col-md-3 quotes-carousel-img">
+                          <img
+                            src="https://about.gitlab.com/nuxt-images/home/logo_chorus_color.svg"
+                            width="250"
+                            height="80"
+                            alt=""
+                          />
+                        </div>
+                        <div class="slp-col-md-8">
+                          <p class="quotes-carousel-body slp-text-quotes">
+                            "During a recent audit for SOC2 compliance, the auditors said that Chorus had the fastest auditing process they have seen and most of that is due to the capabilities of GitLab."
+                          </p>
+                          <p class="quotes-carousel-author slp-text-body3-bold">
+                           - Russell Levy, CTO of Chorus.ai
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="quotes-carousel__content-item" >
+                    <a href="" class="quotes-carousel__link">
+                      <div class="slp-row logo quotes-carousel-text">
+                        <div class="slp-col-md-3 quotes-carousel-img">
+                          <img
+                            src="https://about.gitlab.com/nuxt-images/home/logo_iron_mountain_mono.svg"
+                            width="250"
+                            height="80"
+                            alt=""
+                          />
+                        </div>
+                        <div class="slp-col-md-8">
+                          <p class="quotes-carousel-body slp-text-quotes">
+                            "What's great about GitLab is the single pane of glass it provides for scaling an Agile model."
+                          </p>
+                          <p class="quotes-carousel-author slp-text-body3-bold">
+                            - Josh Langley, VP of Enterprise Architecture and Platforms, Iron Mountain
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="quotes-carousel__content-item">
+                    <a href="" class="quotes-carousel__link">
+                      <div class="slp-row logo quotes-carousel-text">
+                        <div class="slp-col-md-3 quotes-carousel-img">
+                          <img
+                            src="https://about.gitlab.com/nuxt-images/home/logo_siemens_mono.svg"
+                            width="250"
+                            height="80"
+                            alt=""
+                          />
+                        </div>
+                        <div class="slp-col-md-8">
+                          <p class="quotes-carousel-body slp-text-quotes">
+                            "Our customers and developers want to have a reliable service [like Gitlab] that is running all the time."
+                          </p>
+                          <p class="quotes-carousel-author slp-text-body3-bold">
+                            - Roger Meier, Principal Key Expert and Service Owner of code.siemens.com from Siemens IT
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="quotes-carousel__footer">
+            <div class="owl-nav quotes-carousel__footer">
               <span class="slp-text-body1"> 01 - 04 </span>
-              <div>
-                <button class="quotes-btn slp-btn slp-btn-icon">
-                  <iconify-icon
-                    icon="material-symbols:keyboard-arrow-left"
-                    width="32"
-                    height="32"
-                  ></iconify-icon>
-                </button>
-                <button class="quotes-btn slp-btn slp-btn-icon">
-                  <iconify-icon
-                    icon="material-symbols:keyboard-arrow-right"
-                    width="32"
-                    height="32"
-                  ></iconify-icon>
-                </button>
-              </div>
             </div>
           </div>
         </section>
@@ -688,7 +785,7 @@
             <div class="scroll-solutions">
               <div class="slp-col-md-1">
                 <div class="progress-container">
-                  <div class="progress-bar" style="height: 38.44%"></div>
+                  <div class="progress-bar" style="height: 20%"></div>
                 </div>
               </div>
               <div
@@ -1303,16 +1400,16 @@
         <div class="slp-container">
           <div class="slp-container slp-my-96">
             <div class="slp-row w-100 prevent-overflow">
-              <div class="fade-left slp-col-lg-6 aos-init aos-animate">
+              <div class="fade-left slp-col-lg-6 aos-finit aos-animate wow bounceInLeft">
                 <h2 class="slp-mb-16 slp-pr-72 slp-text-heading2-bold">
                   Take GitLab for a spin
                 </h2>
                 <p class="slp-mb-24 slp-text-heading4">
                   See what your team could do with the One DevOps Platform.
                 </p>
-                <a href="" class="slp-btn slp-btn-primary">Get free trial</a>
+                <a href="" class="slp-btn slp-btn-primary fade-left-btn">Get free trial</a>
               </div>
-              <div class="fade-right slp-col-lg-6 aos-init aos-animate">
+              <div class="fade-right slp-col-lg-6 aos-init aos-animate wow bounceInRight">
                 <div class="slp-flex w-100">
                   <div class="vertical-line"></div>
                   <div class="right-column w-100">
@@ -1324,7 +1421,7 @@
                     <p class="slp-mb-24 slp-text-heading4">
                       Have a question? We're here to help.
                     </p>
-                    <a href="" class="slp-btn slp-btn-teriary">
+                    <a href="" class="slp-btn slp-btn-teriary fade-right-btn">
                       Talk to an expert
                       <iconify-icon
                         class="slp-icon featured-icon slp-ml-8"
@@ -1599,7 +1696,30 @@
         </div>
       </div>
     </footer>
-
     <script src="./javascript/style.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./javascript/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function(){
+           $(".owl-carousel").owlCarousel({
+              loop:true,
+              margin:10,
+              nav:true,
+              dots:false,
+              responsive:{
+                  0:{
+                      items:1
+                  },
+                  600:{
+                      items:1
+                  },
+                  1000:{
+                      items:1
+                  }
+
+              }
+           });
+      });
+  </script>
   </body>
 </html>
