@@ -827,7 +827,7 @@
   transition: all .3s linear;
 }
 .featured-content__card:hover{
-  border-bottom-right-radius: 10% 40%;
+  border-radius: 4px 4px 100px 4px;
   background-color: #fff;
 }
 .featured-content__text{
@@ -1586,7 +1586,7 @@
     margin: 0 16px;
   }
   .navigation-dropdown__main-colums{
-    padding: 24px 8px;
+    padding: 24px 8px !important;
   }
 }
 @media (max-width: 1025px) {
@@ -1770,8 +1770,10 @@
     }
 
   }
-  @media (min-width: 1025px) {
-   
+  @media (max-width:1043px) {
+    .navigation{
+      padding: 11px 7px 4px;
+    }
   }
 
   @media (min-width: 1170px) {

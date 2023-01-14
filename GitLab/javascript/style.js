@@ -1,3 +1,9 @@
+//change style  left of element when changing window length
+const navMain = document.querySelector('.navigation-dropdown__main')
+const navMainLeft = navMain.getBoundingClientRect().left;
+const navMainRight = navMain.getBoundingClientRect().right;
+
+
 const leaderPanel = document.getElementById('leaderspanel');
       researchPanel = document.getElementById('researchpanel');
       tabLeader = document.getElementById('tab-leaders');
