@@ -43,6 +43,7 @@ function li_completedItem(item) {
     div.className = 'view'
     const cb = document.createElement('input')
     cb.type = 'checkbox'
+    cb.checked = 'checked'
     cb.className = 'toggle'
     cb.checked = true
     const lb = document.createElement('label')
@@ -112,21 +113,29 @@ function showCount(items) {
     if(number2 > 0){
         $('.clear-completed').style.display = 'block'
     }
+    if (todoItems.length === 0) {
+        $('.toggle-all').checked = true
+    } else {
+        $('.toggle-all').checked = false
+    }
 }
 async function main() {
     try {
         const items = await fetchData()
         showAllItems(items)
     // click to a in ul filters to show active items
-    $('.filters-all').addEventListener('click', function(e) {
+    $('.filters-all').addEventListener('click', async function(e) {
+        const items = await fetchData()
         $('.todo-list').innerHTML = ''
         showAllItems(items)
     })
-    $('.filters-active').addEventListener('click', function(e) {
+    $('.filters-active').addEventListener('click', async function(e) {
+        const items = await fetchData()
         $('.todo-list').innerHTML = ''
         showTodoItems(items)
     })
-    $('.filters-completed').addEventListener('click', function(e) {
+    $('.filters-completed').addEventListener('click',async function(e) {
+        const items = await fetchData()
         $('.todo-list').innerHTML = ''
         showCompletedItems(items)
     })
@@ -140,19 +149,21 @@ main()
 $('#my-form').addEventListener('submit', async function(e) {
     e.preventDefault()
     const title = $('.new-todo').value
-    const data = {
-        title: title,
-        status: "active"
-    }
-    console.log(title)
-    const res = await axios.post('https://63c61ff54ebaa802853ff786.mockapi.io/api/todoItems', data)
-    if (res.status == 201) {
-        $('.new-todo').value = ''
-        $('.todo-list').innerHTML = ''
-        const items = await fetchData()
-        showAllItems(items)
-    } else {
-        alert('fail')
+    if(title != '') {
+        const data = {
+            title: title,
+            status: "active"
+        }
+        console.log(title)
+        const res = await axios.post('https://63c61ff54ebaa802853ff786.mockapi.io/api/todoItems', data)
+        if (res.status == 201) {
+            $('.new-todo').value = ''
+            $('.todo-list').innerHTML = ''
+            const items = await fetchData()
+            showAllItems(items)
+        } else {
+            alert('fail')
+        }
     }
 })
 
@@ -163,7 +174,6 @@ $('.clear-completed').addEventListener('click', async function(e) {
     completedItems.map(async item => {
         const res = await axios.delete(`https://63c61ff54ebaa802853ff786.mockapi.io/api/todoItems/${item.id}`)
         if (res.status == 200) {
-            // $('.clear-completed').style.display = 'none'
             $('.todo-list').innerHTML = ''
             showAllItems(items)
         } else {
@@ -171,6 +181,66 @@ $('.clear-completed').addEventListener('click', async function(e) {
         }
     })
 })
+// click on input checkbox in view to change status active to completed 
+$('.todo-list').addEventListener('click', async function(e) {
+    if (e.target.className === 'toggle') {
+        // if input checked 
+        if(e.target.checked === false){
+            const id = e.target.parentElement.parentElement.id
+            const res = await axios.put(`https://63c61ff54ebaa802853ff786.mockapi.io/api/todoItems/${id}`, {
+                status: 'active'
+            })
+            if (res.status == 200) {
+                $('.todo-list').innerHTML = ''
+                const items = await fetchData()
+                showAllItems(items)
+            } else {
+                alert('fail')
+            }
+        }
+        else {
+            const id = e.target.parentElement.parentElement.id
+            const res = await axios.put(`https://63c61ff54ebaa802853ff786.mockapi.io/api/todoItems/${id}`, {
+                status: 'completed'
+            })
+            if (res.status == 200) {
+                $('.todo-list').innerHTML = ''
+                const items = await fetchData()
+                showAllItems(items)
+            } else {
+                alert('fail')
+            }
+        }
+    }
+})
+// if input toggle-all checked to all items status is completed
+$('.toggle-all').addEventListener('click', async function(e) {
+    const items = await fetchData()
+    if (e.target.checked === true) {
+        items.map(async item => {
+            const res = await axios.put(`https://63c61ff54ebaa802853ff786.mockapi.io/api/todoItems/${item.id}`, {
+                status: 'completed'
+            })
+            if (res.status == 200) {
+                $('.todo-list').innerHTML = ''
+                showAllItems(items)
+            } else {
+                alert('fail')
+            }
+        })
+    } else {
+        items.map(async item => {
+            const res = await axios.put(`https://63c61ff54ebaa802853ff786.mockapi.io/api/todoItems/${item.id}`, {
+                status: 'active'
+            })
+            if (res.status == 200) {
+                $('.todo-list').innerHTML = ''
+                showAllItems(items)
+            } else {
+                alert('fail')
+            }
+        })
+    }
+}) 
 
-
-
+    
