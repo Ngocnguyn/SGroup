@@ -144,8 +144,6 @@ async function main() {
         alert("Loading failed")
     }
 }
-main()
-// type to new-todo to submit data input to api
 $('#my-form').addEventListener('submit', async function(e) {
     e.preventDefault()
     const title = $('.new-todo').value
@@ -242,5 +240,6 @@ $('.toggle-all').addEventListener('click', async function(e) {
         })
     }
 }) 
+main()
 
     
