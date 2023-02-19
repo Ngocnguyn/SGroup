@@ -671,9 +671,13 @@
     border-radius: 0;
     justify-content: space-between !important;
     border-bottom: 1px solid #d1d0d3;
-    padding: 8px 0;
+    padding: 8px 0 !important;
     color: #171321;
+    margin: 0 16px;
     display: flex;
+  }
+  .nav-menu-item--sub{
+    margin-left: 32px;
   }
   .nav-menu-item span{
     letter-spacing: .5px;
@@ -691,6 +695,9 @@
     display: none;
   }
   .menu-company{
+    display: none;
+  }
+  .menu-contactus{
     display: none;
   }
   .menu-items__image{

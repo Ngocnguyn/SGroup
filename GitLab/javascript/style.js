@@ -128,3 +128,39 @@ btnBackResources.addEventListener('click', () =>{
   menuBottom.style.display = 'block';
   navMenuBottom.style.display = 'block';
 });
+
+const btnMoreCompany = document.querySelector('.slp-btn-more__company');
+const menuCompany = document.querySelector('.menu-company');
+btnMoreCompany.addEventListener('click', () =>{
+  menuBottom.style.display = 'none';
+  navMenuBottom.style.display = 'none';
+  menuCompany.style.display = 'block';
+  body.style.overflow = 'hidden';
+  menuSection.style.overflowX = 'hidden';
+});
+
+const btnBackCompany = document.querySelector('.slp-btn-back__company');
+btnBackCompany.addEventListener('click', () =>{
+  body.style.overflow = 'hidden';
+  menuCompany.style.display = 'none';
+  menuBottom.style.display = 'block';
+  navMenuBottom.style.display = 'block';
+});
+
+const btnMoreContactus = document.querySelector('.slp-btn-more__contactus');
+const menuContactus = document.querySelector('.menu-contactus');
+btnMoreContactus.addEventListener('click', () =>{
+  menuBottom.style.display = 'none';
+  navMenuBottom.style.display = 'none';
+  menuContactus.style.display = 'block';
+  body.style.overflow = 'hidden';
+  menuSection.style.overflowX = 'hidden';
+});
+
+const btnBackContactus = document.querySelector('.slp-btn-back__contactus');
+btnBackContactus.addEventListener('click', () =>{
+  body.style.overflow = 'hidden';
+  menuContactus.style.display = 'none';
+  menuBottom.style.display = 'block';
+  navMenuBottom.style.display = 'block';
+});
