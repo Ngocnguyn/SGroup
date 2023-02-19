@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<style>
+    html{
+        font-family: "Roboto", sans-serif;
+    }
+    .img-right{
+        border-top-left-radius: 10%;
+        border-bottom-right-radius: 10%;
+    }
+</style>
+<body>
+    <div class="container flex flex-row items-start p-0 absolute left-0 top-0 ">
+        <!-- Form Left -->
+        <div class="form-left flex flex-col justify-center items-center px-[56px] py-[24px] w-[512] h-[1024px]">
+            <!-- All Frame -->
+            <div class="flex flex-col items-start p-0 g-4 w-[400px] h=[813px]">
+                <!-- Frame1 -->
+                <div class="flex flex-col items-starts p-0 gap-4 w-100 h-67 ">
+                    <div class="flex flex-row items-center p-0 gap-3 w-48 h-16">
+                        <img src="./img/lapechelogo.png" alt="">
+                    </div>
+                    <div class="flex flex-col items-start p-0 gap-2 w-100 h-[128px]">
+                        <div class="text-4xl font-bold text-black">Find your <span class="text-4xl font-bold text-[#FB7B64]">matches</span></div>
+                        <div class="text-sm font-normal text-black w-100 h-20">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis iure adipisci ducimus deserunt iusto expedita accusamus magni neque recusandae, assumenda dicta inventore quaerat ut exercitationem modi aut, alias pariatur commodi.</div>
+                    </div>
+                    <div class="flex flex-row justify-center items-center px-[16px] py-[8px] gap-3 w-full h-11 border-[#d3d3d3] border-[1px] rounded-[8px] hover:bg-slate-300 cursor-pointer ">
+                        <img src="./img/image 2.png" alt="" class="w-[28px] aspect-square">
+                        <div class="text-base font-bold">
+                            Sign up with Google
+                        </div>
+                    </div>
+                </div>
+                <!-- Frame2 -->
+                <div class="flex flex-row justify-center items-center p-0 gap-2.5 w-[400px] h-6">
+                    <div class="w-full h-[1px] border-[#687079] border-[1px]"></div>
+                    <div>OR</div>
+                    <div class="w-full h-[1px] border-[#687079] border-[1px]"></div>
+                </div>
+                <!-- Frame3 -->
+                <div class="flex flex-col items-start p-0 g-2.5 w-[400px] h-[489px] mt-7">
+                    <!-- Input 1 -->
+                    <div class="w-full">
+                        <div class="text-xs font-bold mb-2">Email<span class="text-red-600" >*</span></div>
+                        <input type="text" placeholder="Enter your email" class="outline-none border border-[#ccc] rounded-sm w-full p-2">
+                    </div>
+                    <!-- Input 2 -->
+                    <div class="w-full mt-2">
+                        <div class="text-xs font-bold mb-2">Name<span class="text-red-600" >*</span></div>
+                        <input type="text" placeholder="Enter your name" class="outline-none border border-[#ccc] rounded-sm w-full p-2" required>
+                    </div>
+                    <!-- Input 3 -->
+                    <div class="w-full flex flex-row items-start p-0 gap-6 mt-2">
+                        <div class="flex flex-col items-start p-0 gap-2 w-[188px] h-16">
+                            <div class="text-xs font-bold ">Gender<span class="text-red-600" >*</span></div>
+                            <select name="" id="" class="outline-none border border-[#ccc] rounded-sm w-full p-2">
+                                <option value="" disabled selected class="">Please Select</option>
+                                <option value="Man">Man</option>
+                                <option value="Woman">Woman</option>
+                                <option value="Transgender">Transgender</option>
+                                <option value="Bisexual">Bisexual</option>
+                                <option value="Non-binary">Non-binary</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col items-start p-0 gap-2 w-[188px] h-16">
+                            <div class="text-xs font-bold">Orientation<span class="text-red-600" >*</span></div>
+                            <select name="" id="" class="outline-none border border-[#ccc] rounded-sm w-full p-2">
+                                <option value="" disabled selected class="">Please Select</option>
+                                <option value="Straight">Straight</option>
+                                <option value="Gay">Gay</option>
+                                <option value="Lesbian">Lesbian</option>
+                                <option value="Bisexual">Bisexual</option>
+                                <option value="Asexual">Asexual</option>
+                                <option value="Demisexual">Demisexual</option>
+                                <option value="Pansexual">Pansexual</option>
+                                <option value="Queer">Queer</option>
+                                <option value="Questioning">Questioning</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Input 4 -->
+                    <div class="flex flex-col items-start p-0 gap-2 w-full mt-2">
+                        <div class="text-xs font-bold ">Looking for<span class="text-red-600" >*</span></div>
+                        <select class="outline-none border border-[#ccc] rounded-sm w-full p-2">
+                            <option value="" disabled selected class="">Please Select</option>
+                                <option value="Long-term partnership">Long-term partnership
+                                    Long-term</option>
+                                <option value="Open to short Short-term"> Open to short
+                                    Short-term</option>
+                                <option value="Open to long Short-term "> Open to long
+                                    Short-term fun
+                                    New friends
+                                    Still figuring it out
+                                </option>
+                        </select>
+                    </div>
+                    <!-- Input 5 -->
+                    <div class="w-full mt-2">
+                        <div class="text-xs font-bold mb-2">Password<span class="text-red-600" >*</span></div>
+                        <input type="text" placeholder="Enter your password" class="outline-none border border-[#ccc] rounded-sm w-full p-2" required>
+                    </div>
+                    <!-- Input 6 -->
+                    <div class="w-full mt-2">
+                        <div class="text-xs font-bold mb-2">Confirm password<span class="text-red-600" >*</span></div>
+                        <input type="text" placeholder="Enter your password" class="outline-none border border-[#ccc] rounded-sm w-full p-2" required>
+                    </div>
+                    <!-- Input 7 -->
+                    <div class="flex items-center justify-center w-full mt-2 bg-green-600 text-white p-1 hover: cursor-pointer">Create account</div>
+                </div>
+            </div>
+        </div>
+        <!-- Img Right -->
+        <div class="img-right flex flex-row items-end p-6 gap-[10px] w-[1024px] h-[1024px] bg-purple-300 border border-[#ccc]">
+            <div class="">
+                <div class="text-7xl font-bold w-[880px] h-[216px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

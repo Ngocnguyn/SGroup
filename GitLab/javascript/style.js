@@ -71,12 +71,15 @@ searchCloseBtn.addEventListener('click', () => {
 })
 const menuBtn = document.getElementById('menu__button');
 const menuSection = document.querySelector('.menu');
+const body = document.querySelector('body');
 menuBtn.addEventListener('click', () => {
   menuSection.style.display = 'block';
+  body.style.overflow = 'hidden'
 })
 const closeMenuBtn = document.getElementById('btn-menu-close')
 closeMenuBtn.addEventListener('click', () => {
   menuSection.style.display = 'none';
+  body.style.overflow = 'auto'
 })
 
 // click button id="quotes-btn-right" to quotes-carousel__content translateX= 1140px
@@ -85,3 +88,43 @@ const quotesCarouselContent = document.querySelector('.quotes-carousel__content'
 const quotesCarouselRight = document.querySelector('#quotes-btn-right');
 const quotesCarouselLeft = document.querySelector('#quotes-btn-left');
 const lists = document.querySelectorAll('.quotes-carousel__content-item');
+
+
+// Click btn-more
+const btnMoreSolutions = document.querySelector('.slp-btn-more__solutions');
+const menuBottom = document.querySelector('.menu-bottom');
+const navMenuBottom = document.querySelector('.nav-menu-bottom');
+const menuSolutions = document.querySelector('.menu-solutions');
+btnMoreSolutions.addEventListener('click', () =>{
+  menuBottom.style.display = 'none';
+  navMenuBottom.style.display = 'none';
+  menuSolutions.style.display = 'block';
+  body.style.overflow = 'hidden';
+  menuSection.style.overflowX = 'hidden';
+})
+
+const btnBackSolutions = document.querySelector('.slp-btn-back__solutions');
+btnBackSolutions.addEventListener('click', () =>{
+  body.style.overflow = 'hidden';
+  menuSolutions.style.display = 'none';
+  menuBottom.style.display = 'block';
+  navMenuBottom.style.display = 'block';
+});
+
+const btnMoreResources = document.querySelector('.slp-btn-more__resources');
+const menuResources = document.querySelector('.menu-resources');
+btnMoreResources.addEventListener('click', () =>{
+  menuBottom.style.display = 'none';
+  navMenuBottom.style.display = 'none';
+  menuResources .style.display = 'block';
+  body.style.overflow = 'hidden';
+  menuSection.style.overflowX = 'hidden';
+});
+
+const btnBackResources = document.querySelector('.slp-btn-back__resources');
+btnBackResources.addEventListener('click', () =>{
+  body.style.overflow = 'hidden';
+  menuResources.style.display = 'none';
+  menuBottom.style.display = 'block';
+  navMenuBottom.style.display = 'block';
+});

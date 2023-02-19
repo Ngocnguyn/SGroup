@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<style>
+    html{
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .doing{
+        background-color: rgba(204, 172, 3, 0.56);
+    }
+    .line-doing{
+        border-color: rgba(204, 172, 3, 0.56);
+    }
+</style>
+<body>
+    <div class="container relative w-[1280px]  bg-white">
+        <!-- Logo Frame -->
+        <div class="flex flex-col items-start p-0 gap-[5px] absolute w-[427px] h-[100px] left-[52px] top-[37px]">
+            <img src="../img/logo.png" alt="" class="w-[172px] h-[58px]">
+            <div class="flex flex-row items-start p-0 gap-[5px] w-[172px] h-[23px] mt-[5px]">
+                <div class="w-36 h-5 text-[#5a5c63]">Let’s get shit done!</div>
+                <img src="../img/peace 1.png" alt="">
+            </div>
+        </div>
+        <!-- New task button -->
+        <div class="new_task flex flex-row items-start p-0 gap-[6px] absolute w-24 h-5 left-[1147px] top-[97px] hover: cursor-pointer">
+            <div class="">+</div>
+            <div class="text-[#5a5c63] text-base">New task</div>
+        </div>
+        <!-- Todo -->
+        <div class="todo flex flex-row justify-between items-center p-0 absolute w-[376px] h-[34px] left-[50px] top-[140px] bg-[#00A6DA] border rounded-md">
+            <div class="text-white py-[7px] px-[9px] text-base font-bold w-10 h-5 flex items-center text-center " >Todo</div>
+            <div class="font-bold text-white bg-[#00CDDA] m-[7px] top-0 w-5 h-5 flex items-center text-center justify-center">3</div>
+        </div>
+        <!-- Line todo -->
+        <div class="absolute w-[374px] h-0 border-[2px] border-[#00A6DA] left-[52px] top-[190px] "></div>
+
+        <!-- Doing -->
+        <div class="doing flex flex-row justify-between items-center p-0 absolute w-[376px] h-[34px] left-[470px] top-[140px] border rounded-md">
+            <div class="text-white py-[7px] px-[9px] text-base font-bold w-10 h-5 flex items-center text-center " >Doing</div>
+            <div class="font-bold text-white bg-[#dab700] m-[7px] top-0 w-5 h-5 flex items-center text-center justify-center">3</div>
+        </div>
+        <!-- Line doing -->
+        <div class="line-doing absolute w-[374px] h-0 border-[2px] left-[472px] top-[190px] "></div>
+
+        <!-- Finished -->
+        <div class="finished flex flex-row justify-between items-center p-0 absolute w-[376px] h-[34px] left-[889px] top-[140px] bg-[#3BC057] border rounded-md">
+            <div class="text-white py-[7px] px-[9px] text-base font-bold w-10 h-5 flex items-center text-center " >Finished</div>
+            <div class="font-bold text-white bg-[#69CE7E] m-[7px] top-0 w-5 h-5 flex items-center text-center justify-center">3</div>
+        </div>
+        <!-- Line finished -->
+        <div class="absolute w-[374px] h-0 border-[2px] border-[#3BC057] left-[891px] top-[190px] "></div>
+    </div>
+</body> 
+</html>
