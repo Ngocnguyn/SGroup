@@ -180,6 +180,7 @@ $('.todo-list').addEventListener('click', async function(e) {
                     }
                 })
                    $('.todo-list').innerHTML = ''
+                   
                    showAllItems(todoArr)
             }
             catch(err){
